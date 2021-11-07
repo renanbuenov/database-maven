@@ -23,39 +23,19 @@ public class Veiculo {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getModelo() {
         return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
     }
 
     public Integer getAno() {
         return ano;
     }
 
-    public void setAno(Integer ano) {
-        this.ano = ano;
-    }
-
     public String getPlaca() {
         return placa;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-
     public Double getPreco() {
         return preco;
-    }
-
-    public void setPreco(Double preco) {
-        this.preco = preco;
     }
 }
