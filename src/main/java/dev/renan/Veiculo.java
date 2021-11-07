@@ -4,18 +4,18 @@ public class Veiculo {
 
     private String nome;
     private String modelo;
+    private String placa;
     private Integer ano;
-    private String place;
     private Double preco;
 
     public Veiculo() {
     }
 
-    public Veiculo(String nome, String modelo, Integer ano, String place, Double preco) {
+    public Veiculo(String nome, String modelo, String placa, Integer ano, Double preco) {
         this.nome = nome;
         this.modelo = modelo;
+        this.placa = placa;
         this.ano = ano;
-        this.place = place;
         this.preco = preco;
     }
 
@@ -43,12 +43,12 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public String getPlace() {
-        return place;
+    public String getPlaca() {
+        return placa;
     }
 
-    public void setPlace(String place) {
-        this.place = place;
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
     public Double getPreco() {
