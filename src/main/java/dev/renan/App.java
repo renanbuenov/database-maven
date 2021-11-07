@@ -1,13 +1,45 @@
 package dev.renan;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+
+    public static void main(String[] args) {
+
+
+        GUI gui = new GUI();
+        gui.menuConcessionaria();
+
+            //veiculoService.inserir1();
+
+            //veiculoService.inserir();
+
+
+            /*
+            veiculo.setNome();
+            veiculo.setModelo();
+            veiculo.setPlaca();
+            veiculo.setAno();
+            veiculo.setPreco();
+            veiculo.inserir();
+            */
+
+            //veiculoService.consultar();
+
+            /*
+            veiculo.setNome();
+            veiculo.setModelo();
+            veiculo.setPlaca();
+            veiculo.setAno();
+            veiculo.setPreco();
+
+            veiculoService.alterar();
+            veiculoService.consultar();
+            */
+
+            //veiculoService.excluir(1);
+            //veiculoService.consultar();
+
+            //veiculoService.mysql.stmt.close();
+            //veiculoService.mysql.conn.close();
+
     }
 }
