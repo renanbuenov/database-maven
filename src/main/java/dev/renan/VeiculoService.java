@@ -6,42 +6,42 @@ import java.sql.SQLException;
 
 public class VeiculoService {
 
-    MySQL mysqlr;
+    MySQL mysql;
 
     public VeiculoService() {
-        mysqlr = new MySQL();
+        mysql = new MySQL();
     }
 
 
     public static void main(String[] args) {
         try {
-            VeiculoService template = new VeiculoService();
-            template.conectar();
+            VeiculoService veiculoService = new VeiculoService();
+            veiculoService.conectar();
 
-            //template.inserir();
+            //veiculoService.inserir();
 
 
-            //template.inserir();
+            //veiculoService.inserir();
 
 
 
             Veiculo pessoa = new Veiculo();
             /*
-            pessoa.setNome();
-            pessoa.setEmail();
-            pessoa.setCidade();
-            template.inserir();
+            veiculoService.setNome();
+            veiculoService.setModelo();
+            veiculoService.setPlaca();
+            veiculoService.inserir();
             */
 
-            //template.consultar();
+            //veiculoService.consultar();
 
             /*
-            pessoa.setNome();
-            pessoa.setEmail();
-            pessoa.setCidade();
+            veiculo.setNome();
+            veiculo.setModelo();
+            veiculo.setPlaca();
 
-            template.alterar();
-            template.consultar();
+            veiculoService.alterar();
+            veiculoService.consultar();
             */
 
             template.excluir(1);
@@ -57,7 +57,7 @@ public class VeiculoService {
     }
 
     public void conectar(){
-        boolean connected = mysqlr.connect("localhost", "8080", "Concessionaria", "root", "1234");
+        boolean connected = mysql.connect("localhost", "8080", "Concessionaria", "root", "1234");
         if (connected) {
             System.out.println("Base de dados conectada.");
         } else {
@@ -68,7 +68,7 @@ public class VeiculoService {
     public void inserir(){
         String query = "INSERT INTO Veiculo (nome, modelo, placa) "
                 + "values ('Honda Civic', 'Hond', 'ABCD1234')";
-        int status = mysqlr.executeUpdate(query);
+        int status = mysql.executeUpdate(query);
         if (status == 1) {
             System.out.println("Dados inseridos com sucesso!");
         } else {
@@ -79,7 +79,7 @@ public class VeiculoService {
     public void inserir(String nome, String modelo, String placa){
         String query = "INSERT INTO Pessoa (nome, email, cidade) "
                 + "values ('"+nome+"', '"+modelo+"', '"+placa+"')";
-        int status = mysqlr.executeUpdate(query);
+        int status = mysql.executeUpdate(query);
         if (status == 1) {
             System.out.println("Dados inseridos com sucesso!");
         } else {
@@ -90,7 +90,7 @@ public class VeiculoService {
     public void inserir(Veiculo veiculo){
         String query = "INSERT INTO Pessoa (nome, modelo, placa) "
                 + "values ('"+veiculo.getNome()+"', '"+veiculo.getModelo()+"', '"+veiculo.getPlaca()+"')";
-        int status = mysqlr.executeUpdate(query);
+        int status = mysql.executeUpdate(query);
         if (status == 1) {
             System.out.println("Dados inseridos com sucesso!");
         } else {
@@ -99,7 +99,7 @@ public class VeiculoService {
     }
 
     public void consultar(){
-        ResultSet rs = mysqlr.executeQuery("SELECT * FROM Veiculo");
+        ResultSet rs = mysql.executeQuery("SELECT * FROM Veiculo");
         if (rs != null) {
             try {
                 while (rs.next()) {
@@ -122,7 +122,7 @@ public class VeiculoService {
         String query = "UPDATE Veiculo SET nome='" + veiculo.getNome() + "', "
                 + "nome='" + veiculo.getNome() + "', modelo='" + veiculo.getModelo() + "'  "
                 + "WHERE id=" + ID;
-        status = mysqlr.executeUpdate(query);
+        status = mysql.executeUpdate(query);
         if (status == 1) {
             System.out.println("Dados alterados com sucesso!");
         } else {
@@ -132,7 +132,7 @@ public class VeiculoService {
 
     public void excluir(int ID){
         String query = "DELETE FROM Pessoa WHERE id=" + ID;
-        int status = mysqlr.executeUpdate(query);
+        int status = mysql.executeUpdate(query);
         if (status == 1) {
             System.out.println("Dados excluídos com sucesso!");
         } else {
